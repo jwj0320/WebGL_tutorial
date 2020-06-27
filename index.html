@@ -1,0 +1,81 @@
+<html>
+
+<head>
+    <title>WebGLProject - 201520998</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <link rel="stylesheet" href="style.css">
+    
+
+</head>
+
+<body onload="main()">
+    <header>
+        <h1>Simple WebGL Introduction</h1>
+        <h3>2-Dimensional Space consists of 3 elements : points, lines, faces</h3></br>
+        In the WebGL you can express elements above by using points, lines and Triangles.
+<hr>
+    </header>
+    Select :
+    <select id="selectGl">
+        <option value="point">point</option>
+        <option value="line">line</option>
+        <option value="lineStrip">lineStrip</option>
+        <option value="lineLoop">lineLoop</option>
+        <option value="triangle">triangle</option>
+        <option value="triangleStrip">triangleStrip</option>
+        <option value="triangleFan">triangleFan</option>
+    </select>
+    <div id="div_point" >
+        <h2>Point</h2>
+        <canvas id="point"></canvas>
+        <h6>( ↑ Click Anywhere ↑ )</h6>
+        <img src="img/1.png">
+    </div>
+    <div id="div_lineStrip" hidden>
+        <h2>Line Strip</h2>
+        <canvas id="lineStrip"></canvas>
+        <h6>( ↑ Click Anywhere ↑ )</h6>
+        <img src="img/2.png">
+    </div>
+    <div id="div_line" hidden>
+        <h2>Line</h2>
+        <canvas id="line"></canvas>
+        <h6>( ↑ Click Anywhere ↑ )</h6>
+        <img src="img/3.png">
+    </div>
+    <div id="div_lineLoop" hidden>
+        <h2>Line Loop</h2>
+        <canvas id="lineLoop"></canvas>
+        <h6>( ↑ Click Anywhere ↑ )</h6>
+        <img src="img/4.png">
+    </div>
+
+    <div id="div_triangle" hidden>
+        <h2>Triangle</h2>
+        <canvas id="triangle"></canvas>
+        <h6>( ↑ Click Anywhere ↑ )</h6>
+        <img src="img/5.png">
+    </div>
+
+    <div id="div_triangleStrip" hidden>
+        <h2>Triangle Strip</h2>
+        <canvas id="triangleStrip"></canvas>
+        <h6>( ↑ Click Anywhere ↑ )</h6>
+        <img src="img/6.png">
+    </div>
+
+    <div id="div_triangleFan" hidden>
+        <h2>Triangle Fan</h2>
+        <canvas id="triangleFan"></canvas>
+        <h6>( ↑ Click Anywhere ↑ )</h6>
+        <img src="img/7.png">
+    </div>
+
+
+
+</body>
+<script type="text/javascript" src="script.js">
+</script>
+
+</html>
