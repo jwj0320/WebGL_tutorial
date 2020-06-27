@@ -108,7 +108,7 @@ function main() {
     var lineLoop = document.getElementById("lineLoop");
     var triangle = document.getElementById("triangle");
     var triangleStrip = document.getElementById("triangleStrip")
-    var riangleFan = document.getElementById("triangleFan")
+    var triangleFan = document.getElementById("triangleFan")
 
     // initialize canvas
     callEvent(point);
@@ -117,7 +117,7 @@ function main() {
     callEvent(lineLoop);
     callEvent(triangle);
     callEvent(triangleStrip);
-    callEvent(riangleFan);
+    callEvent(triangleFan);
 
     // add clickEvent
     point.addEventListener("click", function (event) { callEvent(this, event, gl.POINTS); });
@@ -126,7 +126,7 @@ function main() {
     lineLoop.addEventListener("click", function (event) { callEvent(this, event, gl.LINE_LOOP); });
     triangle.addEventListener("click", function (event) { callEvent(this, event, gl.TRIANGLES); });
     triangleStrip.addEventListener("click", function (event) { callEvent(this, event, gl.TRIANGLE_STRIP); });
-    riangleFan.addEventListener("click", function (event) { callEvent(this, event, gl.TRIANGLE_FAN); });
+    triangleFan.addEventListener("click", function (event) { callEvent(this, event, gl.TRIANGLE_FAN); });
 
 
     requestAnimFrame = (function () {
@@ -148,7 +148,6 @@ function callEvent(element, event, type) {
     if (!initialiseBuffer()) {
         return;
     }
-
     if (!initialiseShaders()) {
         return;
     }
