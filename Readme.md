@@ -55,9 +55,9 @@ point, line, lineStrip, lineLoop, triangle, trianleStrip,
 ```javascript
     if (event != null) {
 
-        x = event.layerX - (Number(getComputedStyle(element).width.split("px")[0]) / 2);
-        y = -event.layerY + (Number(getComputedStyle(element).height.split("px")[0]) / 2);
-
+        x = event.offsetX - (Number(getComputedStyle(element).width.split("px")[0]) / 2);
+        y = -event.offsetY + (Number(getComputedStyle(element).height.split("px")[0]) / 2);
+        
         x /= (Number(getComputedStyle(element).width.split("px")[0]) / 2);
         y /= (Number(getComputedStyle(element).height.split("px")[0]) / 2);
 
@@ -67,16 +67,6 @@ point, line, lineStrip, lineLoop, triangle, trianleStrip,
     }
 ```
 
-* first initialize
-```javascript
-    if (!initialiseGL(element)) {
-        return;
-    }
-    if (!initialiseBuffer()) {
-        return;
-    }
-
-    if (!initialiseShaders()) {
-        return;
-    }
-```
+## Warning
+* code event.layerX and event.layerY is different from browser to browser.
+so use event.offsetX and event.offsetY

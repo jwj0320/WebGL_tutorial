@@ -135,12 +135,24 @@ function main() {
                 window.setTimeout(callback, 1000, 60);
             };
     })();
-
+    //select event
+    document.getElementById("selectGl").addEventListener("change", function (event) {
+        document.getElementById("div_point").hidden = true;
+        document.getElementById("div_line").hidden = true;
+        document.getElementById("div_lineStrip").hidden = true;
+        document.getElementById("div_lineLoop").hidden = true;
+        document.getElementById("div_triangle").hidden = true;
+        document.getElementById("div_triangleStrip").hidden = true;
+        document.getElementById("div_triangleFan").hidden = true;
+    
+        document.getElementById("div_" + this.value).hidden = false;
+    })
 }
 
 
 //click event processing
 function callEvent(element, event, type) {
+    
 
     if (!initialiseGL(element)) {
         return;
@@ -158,14 +170,16 @@ function callEvent(element, event, type) {
 
     //click point to vertex
     if (event != null) {
-
-        x = event.layerX - (Number(getComputedStyle(element).width.split("px")[0]) / 2);
-        y = -event.layerY + (Number(getComputedStyle(element).height.split("px")[0]) / 2);
-
+        
+        x = event.offsetX - (Number(getComputedStyle(element).width.split("px")[0]) / 2);
+        y = -event.offsetY + (Number(getComputedStyle(element).height.split("px")[0]) / 2);
+        
         x /= (Number(getComputedStyle(element).width.split("px")[0]) / 2);
         y /= (Number(getComputedStyle(element).height.split("px")[0]) / 2);
 
         var vertexData = [x, y, 0.0]
+        
+        
         Array.prototype.push.apply(element.vertexAry, vertexData);
 
     }
@@ -208,16 +222,3 @@ function callEvent(element, event, type) {
         return false;
     }
 }
-
-//select tag event
-document.getElementById("selectGl").addEventListener("change", function (event) {
-    document.getElementById("div_point").hidden = true;
-    document.getElementById("div_line").hidden = true;
-    document.getElementById("div_lineStrip").hidden = true;
-    document.getElementById("div_lineLoop").hidden = true;
-    document.getElementById("div_triangle").hidden = true;
-    document.getElementById("div_triangleStrip").hidden = true;
-    document.getElementById("div_triangleFan").hidden = true;
-
-    document.getElementById("div_" + this.value).hidden = false;
-})
