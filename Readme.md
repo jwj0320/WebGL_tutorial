@@ -1,7 +1,7 @@
 # WebGL Tutorial - Simple WebGL Introduction
 ## main()
 * document canvas element call
-```js
+```javascript
     var point = document.getElementById("point");
     var line = document.getElementById("line");
     var lineStrip = document.getElementById("lineStrip");
@@ -12,7 +12,7 @@
 ```
 * initialize canvas
 point, line, lineStrip, lineLoop, triangle, trianleStrip, 
-```js
+```javascript
     callEvent(point);
     callEvent(line);
     callEvent(lineStrip);
@@ -22,7 +22,7 @@ point, line, lineStrip, lineLoop, triangle, trianleStrip,
     callEvent(triangleFan);
 ```
 * add clickEvent
-```js
+```javascript
     point.addEventListener("click", function (event) { callEvent(this, event, gl.POINTS); });
     line.addEventListener("click", function (event) { callEvent(this, event, gl.LINES); });
     lineStrip.addEventListener("click", function (event) { callEvent(this, event, gl.LINE_STRIP); });
@@ -33,7 +33,7 @@ point, line, lineStrip, lineLoop, triangle, trianleStrip,
 ```
 ## callEvent()
 * first initialize
-```js
+```javascript
     if (!initialiseGL(element)) {
         return;
     }
@@ -46,13 +46,13 @@ point, line, lineStrip, lineLoop, triangle, trianleStrip,
 ```
 
 * click point initialization
-```js
+```javascript
     if (element.vertexAry == undefined)
         element.vertexAry = [];
 ```
 
 * click point to vertex
-```js
+```javascript
     if (event != null) {
 
         x = event.layerX - (Number(getComputedStyle(element).width.split("px")[0]) / 2);
@@ -68,7 +68,7 @@ point, line, lineStrip, lineLoop, triangle, trianleStrip,
 ```
 
 * first initialize
-```js
+```javascript
     if (!initialiseGL(element)) {
         return;
     }
